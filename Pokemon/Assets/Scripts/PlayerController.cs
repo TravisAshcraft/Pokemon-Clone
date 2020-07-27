@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -72,13 +72,12 @@ public class PlayerController : MonoBehaviour
 
     private void CheckForEncounters()
     {
-        if (Physics2D.OverlapCircle(transform.position, 0.3f, grassLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
         {
-            if (UnityEngine.Random.Range(1, 101) <= 10)
+            if(Random.Range(1, 101) <= 10)
             {
-                Debug.Log("Encountered a wild Pokemon!");
+                Debug.Log("Encountered a wild pokemon");
             }
-
         }
     }
 
