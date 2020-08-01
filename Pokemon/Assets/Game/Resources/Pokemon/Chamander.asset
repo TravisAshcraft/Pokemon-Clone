@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2964250c7483a774f8df8fae01910750, type: 3}
   m_Name: Chamander
   m_EditorClassIdentifier: 
-  name: 
+  name: Charmander
   description: 
   frontSprite: {fileID: 21300000, guid: cd259d9d4f8ba2749a16d1cc64d46bec, type: 3}
   backSprite: {fileID: 21300000, guid: ed8e1d9976a1fd94d961840d8f6e7764, type: 3}
@@ -21,6 +21,13 @@ MonoBehaviour:
   maxHp: 39
   attack: 52
   defense: 43
-  spAttack: 60
+  spAttack: 188
   spDefense: 50
   speed: 65
+  learnableMoves:
+  - moveBase: {fileID: 11400000, guid: fbd4c35a7c16ddb488946472ff46d388, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 4137847e4fefd2345a413d86179057c3, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: 2a22c527bdfee1c4690b888ddbe68bbf, type: 2}
+    level: 7
