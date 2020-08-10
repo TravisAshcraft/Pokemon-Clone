@@ -130,3 +130,39 @@ public enum PokemonType
     Ghost,
     Dragon
 }
+
+public class TypeChart
+{
+   static float[][] chart =
+    {
+        //                  Nor  Fir  Wat Ele Gra Ice Fig Poi Gro Fly Phs Bug Roc Gho Dra
+       /*Nor*/ new float [] { 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f,.5f, 0f, 1f  },
+       /*Fir*/ new float [] { 1f,.5f,.5f, 1f, 2f, 2f, 1f, 1f, 1f, 1f, 1f, 2f,.5f, 1f, 1f  },
+       /*Wat*/ new float [] { 1f, 2f,.5f, 1f,.5f, 1f, 1f, 1f, 2f, 1f, 1f, 1f, 2f, 1f,.5f  },
+       /*Ele*/ new float [] { 1f, 1f, 2f,.5f,.5f, 1f, 1f, 1f, 0f, 2f, 1f, 1f, 1f, 1f,.5f  },
+       /*Gra*/ new float [] { 1f,.5f, 2f, 1f,.5f, 1f, 1f,.5f, 2f,.5f, 1f, 1f, 2f, 1f,.5f  },
+       /*Ice*/ new float [] { 1f,.5f,.5f, 1f, 2f, 1f, 1f, 1f, 2f, 2f, 1f, 1f, 1f, 1f, 2f  },
+       /*Fig*/ new float [] { 2f, 1f, 1f, 1f, 1f, 2f, 1f,.5f, 1f,.5f,.5f,.5f, 2f, 0f, 1f  },
+       /*Poi*/ new float [] { 1f, 1f, 1f, 1f, 2f, 1f, 1f,.5f,.5f, 1f, 1f, 1f,.5f,.5f, 1f  },
+       /*Gro*/ new float [] { 1f, 2f, 1f, 2f,.5f, 1f, 1f, 2f, 1f, 0f, 1f,.5f, 2f, 1f, 1f  },
+       /*Fly*/ new float [] { 1f, 1f, 1f,.5f, 2f, 1f, 2f, 1f, 1f, 1f, 1f, 2f,.5f, 1f, 1f  },
+       /*Phs*/ new float [] { 1f, 1f, 1f, 1f, 1f, 1f, 2f, 2f, 1f, 1f,.5f, 1f, 1f, 1f, 1f  },
+       /*Bug*/ new float [] { 1f,.5f, 1f, 1f, 2f, 1f,.5f,.5f, 1f,.5f, 2f, 1f, 1f,.5f, 1f  },
+       /*Roc*/ new float [] { 1f, 2f, 1f, 1f, 1f, 2f,.5f, 1f,.5f, 2f, 1f, 2f, 1f, 1f, 1f  },
+       /*Gho*/ new float [] { 0f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 2f, 1f, 1f, 1f, 2f  },
+       /*Dra*/ new float [] { 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 2f  },
+    };
+
+    public static float GetEffectiveness(PokemonType attackType, PokemonType defenseType)
+    {
+        if (attackType == PokemonType.None || defenseType == PokemonType.None)
+        {
+            return 1;
+        }
+
+        int row = (int)attackType - 1;
+        int col = (int)defenseType - 1;
+
+        return chart[row][col];
+    }
+}
