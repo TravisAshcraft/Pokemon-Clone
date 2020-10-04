@@ -8,8 +8,8 @@ using DG.Tweening;
 
 public class BattleUnit : MonoBehaviour
 {
-    [SerializeField] PokemonBase _base;
-    [SerializeField] int level;
+     PokemonBase _base;
+     int level;
     [SerializeField] bool isPlayerUnit;
 
     public Pokemon Pokemon { get; set; }
@@ -24,9 +24,9 @@ public class BattleUnit : MonoBehaviour
         originalPos = image.transform.localPosition;
         originalColor = image.color;
     }
-    public void Setup()
+    public void Setup(Pokemon pokemon)
     {
-        Pokemon = new Pokemon(_base, level);
+        Pokemon = pokemon;
         if (isPlayerUnit) // tells unity that if this is player set the back of the sprite
         {
             image.sprite = Pokemon.Base.BackSprite;
